@@ -1,0 +1,59 @@
+NOTAS SOBRE O PROJETO
+a parte que terá interação no website é o preenchimento de formulários (3 - Forms)
+(user, address, location(deixar o carro), nome da island), 
+cliente entra apartir do email e password,
+o admin entra apartir de outro link (hipótese 1)
+a parte dos veiculos/categorias/propriedades é só do admin
+reservas controladas pelo admin e visualizadas pelo cliente
+
+
+
+IDEIAS TIRADAS DE UM WEBSITE:
+
+    USER SÓ PREENCHE O FORM
+    - os dados de um user serve para preencher o formulário de reserva de um carro que guarda,
+    numa base de dados os campos inseridos e após o preenchimento, perguntar se quer tornar-se cliente,
+    se sim,
+    preencher o resto dos campos necessários,
+    senão, 
+    apenas faz o aluguer do carro.
+
+    CLIENTE PODE VERIFICAR RESERVAS E EFECTUAR RESERVAS SEM PREENCHER TODOS OS CAMPOS
+    - Dá para entrar como cliente caso já esteja confirmado
+
+    ADMIN CONTROLA O SITE (hipótese 2)
+    - um admin entra ao colocar o email pelo form do cliente e esse email é identificado se é admin ou cliente,
+    caso seja admin fica com uma interface mais completa do que a do cliente.
+
+---------------------------
+BASE DE DADOS
+
+TABELAS: 
+    islands
+    locations
+    addresses
+
+    clientes
+    users 
+    profiles
+    
+    reservations
+    vehicles
+    categories
+    properties
+    vehicles_has_properties
+    categories_has_properties
+
+DIAGRAMA TABELA SHORTCUTS
+
+L - Layer 
+T - Table
+V - View
+D - Delete
+G - Routines
+H - Hand
+I - Image
+N - Text
+1,2,3,4,5 are the various link types
+CMD + w - Sair de um elemento
+CMD + Q - Sair de tudo
