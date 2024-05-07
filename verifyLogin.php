@@ -22,6 +22,8 @@ if (count($utilizadores) != 1) {
 
 if ($utilizadores[0]->checkPassword($_POST['password'])) {
     session_start();
+    $_SESSION['logged_id'] = true;
+    $_SESSION['first_name'] = $utilizadores[0]->getFirstName();
     header('Location: index.php');
 } else {
     echo "Palavra-passe Incorrecta";

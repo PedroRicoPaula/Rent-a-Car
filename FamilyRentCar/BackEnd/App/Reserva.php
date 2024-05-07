@@ -1,6 +1,6 @@
 <?php
 
-namespace UAC\PWII\ORM;
+namespace FamilyRentCar\BackEnd\App;
 
 class Reserva
 {
@@ -10,7 +10,7 @@ class Reserva
 
     public function __construct(string $descricao = '')
     {
-        $this->tableName = 'reservas';
+        $this->tableName = 'reservations';
         $this->descricao = $descricao;
     }
 
