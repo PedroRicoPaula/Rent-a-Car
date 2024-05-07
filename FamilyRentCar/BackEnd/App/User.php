@@ -1,71 +1,20 @@
 <?php
+
 namespace FamilyRentCar\BackEnd\App;
-require_once 'Address.php';
-
-require_once 'vendor/autoload.php';
-
-
-use Carbon\Carbon;
 
 class User
 {
-    protected string $firstName;
-    protected string $lastName;
+    use DBModel;
+
     protected string $email;
-    protected Carbon $birthdate;
-    protected string $cellphone;
-    protected Address $address;
+    protected string $password;
 
-    public function __construct($firstName, $lastName, $email, Carbon $birthdate, $cellphone, Address $address)
+    public function __construct(string $email = '', string $password = '')
     {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
+        $this->tableName = 'users';
+
         $this->email = $email;
-        $this->birthdate = $birthdate;
-        $this->cellphone = $cellphone;
-        $this->address = $address;
-    }
-
-    
-
-    /**
-     * Get the value of firstName
-     */ 
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
-
-    /**
-     * Set the value of firstName
-     *
-     * @return  self
-     */ 
-    public function setFirstName($firstName)
-    {
-        $this->firstName = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of lastName
-     */ 
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
-    /**
-     * Set the value of lastName
-     *
-     * @return  self
-     */ 
-    public function setLastName($lastName)
-    {
-        $this->lastName = $lastName;
-
-        return $this;
+        $this->password = password_hash($password, PASSWORD_DEFAULT);
     }
 
     /**
@@ -89,42 +38,19 @@ class User
     }
 
     /**
-     * Get the value of birthdate
-     */ 
-    public function getBirthdate()
-    {
-        return $this->birthdate;
-    }
-
-    /**
-     * Set the value of birthdate
+     * Set the value of password
      *
      * @return  self
      */ 
-    public function setBirthdate($birthdate)
+    public function setPassword($password)
     {
-        $this->birthdate = $birthdate;
+        $this->password = password_hash($password, PASSWORD_DEFAULT);
 
         return $this;
     }
 
-    /**
-     * Get the value of cellphone
-     */ 
-    public function getCellphone()
+    public function checkPassword(string $password): bool
     {
-        return $this->cellphone;
-    }
-
-    /**
-     * Set the value of cellphone
-     *
-     * @return  self
-     */ 
-    public function setCellphone($cellphone)
-    {
-        $this->cellphone = $cellphone;
-
-        return $this;
+        return password_verify($password, $this->password);
     }
 }
