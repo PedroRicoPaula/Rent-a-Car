@@ -14,23 +14,69 @@ var_dump($_SESSION);
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+    <header class="header">
     <?php include('Includes/header.php')?>
-    <h1>Rent-a-Car</h1>
-    <form action="verifyReservations.php" method="post">
-        <h1>Pesquisa</h1>
-        <label for="">Levantamento</label>
-        <option value="<?php echo "opcao1"; ?>"> <?php echo "opcao1";?></option>
-        <label for="">Devolução</label>
-        <option value="<?php echo "opcao1"; ?>"> <?php echo "opcao1";?></option>
-        <br>
-        <input type="date" name="date" id="data" placeholder="Data de levantamento">
-        <input type="text" name="hora" id="hora" placeholder="Hora de levantamento">
-        <br>
-        <input type="date" name="date" id="data" placeholder="Data de Devolução">
-        <input type="text" name="hora" id="hora" placeholder="Hora de Devolução">
-        <br>
-        <button type="submit">Pesquisar 🔍</button>
-    </form>
+      <article>
+        <div class="container">
+          <div class="form">
+            <form action="verifyReservations.php" method="post">
+              <label for="">Levantamento</label>
+              <option value=""></option>
+              <input
+                type="date"
+                name="date"
+                id="data"
+                placeholder="Data de levantamento"
+                class="input-form"
+              />
+              <input
+                type="text"
+                name="hora"
+                id="hora"
+                placeholder="Hora de levantamento"
+                class="input-form"
+              />
+              <br />
+              <label for="">Devolução</label>
+              <option value=""></option>
+              <input
+                type="date"
+                name="date"
+                id="data"
+                placeholder="Data de Devolução"
+                class="input-form"
+              />
+              <input
+                type="text"
+                name="hora"
+                id="hora"
+                placeholder="Hora de Devolução"
+                class="input-form"
+              />
+              <button type="submit" class="submit">Pesquisar 🔍</button>
+            </form>
+          </div>
+        </div>
+      </article>
+    </header>
+    <main>
+      <div class="titulo-frota">
+        <h1>Frota</h1>
+      </div>
+      <div class="frota">
+        <div class="img">
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+        </div>
+      </div>
+    </main>
     <?php include('Includes/footer.php')?>
 </body>
 </html>
