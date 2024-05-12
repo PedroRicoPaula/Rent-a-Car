@@ -53,6 +53,9 @@ ul {
   align-items: center;
   transition: 0.7s ease-in-out;
 }
+.button-header {
+  margin: 0 auto;
+}
 
 article {
   min-width: 20vw;

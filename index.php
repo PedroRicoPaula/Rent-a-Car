@@ -2,7 +2,7 @@
 use FamilyRentCar\BackEnd\App\User;
 session_start();
 
-var_dump($_SESSION);
+//var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>

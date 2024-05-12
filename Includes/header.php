@@ -6,7 +6,10 @@
         <li>Frota</li>
         <li>Contactos</li>
       </ul>
-    <button class="button-nav"><a href="Login.php">Login</a></button>
+    <div class="button-header">
+      <button class="button-nav"><a href="Login.php">Login</a></button>
+      <button class="button-nav"><a href="Logout.php">Logout</a></button>
+    </div>
     <!-- <button class="button-nav"><a href="Dashboard/Admin.php">Admin</a></button> -->
     </div>
 </nav>
