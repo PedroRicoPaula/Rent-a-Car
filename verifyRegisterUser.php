@@ -22,15 +22,14 @@ if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['pass
     $new_user->setEmail($_POST['email']);
     $new_user->setPassword($_POST['password']);
 
-    
-    if (!$new_user->save()) {
-        //echo "Usuário criado com sucesso.";
+    try {
+        $new_user->save();
         header('Location: index.php');
-    } else {
+    } catch (\Exception $e) {
         echo "Houve um erro ao criar o utilizador.";
     }
+       
 } else {
-    
     echo "Todos os campos são obrigatórios.";
 }
 ?>

@@ -23,10 +23,17 @@ if (count($utilizadores) != 1) {
 if ($utilizadores[0]->checkPassword($_POST['password'])) {
     session_start();
     $_SESSION['logged_id'] = true;
-    //$_SESSION['first_name'] = $utilizadores[0]->getFirstName();
-    header('Location: index.php');
+    
+    $_SESSION['user_id'] = $utilizadores[0]->getId();
+    $_SESSION['is_admin'] = $utilizadores[0]->isAdmin();
+
+    if($_SESSION['is_admin']){
+        header('Location: Dashboard/index.php');
+    } else {
+        header('Location: index.php');
+    }
 } else {
-    echo "Palavra-passe Incorrecta";
+    echo "Palavra-Passe Incorrecta";
     exit;
 }
 ?>
