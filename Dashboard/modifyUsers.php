@@ -1,10 +1,10 @@
 <?php
+session_start();
 include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\User;
 use FamilyRentCar\BackEnd\App\DBModel;
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,14 +21,41 @@ use FamilyRentCar\BackEnd\App\DBModel;
             margin-bottom: 2rem;
         }
     </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
     <h1>Admin</h1>
     <!-- Enviar para o Login para sair do Dashboard -->
+    <button class="btn-Reservations" name="clickReservations"><a href="index.php">Admin Page</a></button>
     <button class="button-nav"><a href="../Login.php">Login</a></button>
-    <button class="btn-User" name="clickUser"><a href="modifyUsers.php">Utilizadores</a></button>
     <button class="btn-Frotas" name="clickFrota"><a href="modifyFrotas.php">Frotas</a></button>
     <button class="btn-Reservations" name="clickReservations"><a href="modifyReservas.php">Reservas</a></button>
-      
+
+<?php 
+        $users = User::search([]);
+        ?>
+        <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>is_Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($users as $user) {?>
+                        <tr>
+                            <td><?php echo $user->getId(); ?></td>
+                            <td><?php echo $user->getEmail(); ?></td>
+                            <td><?php echo $user->isAdmin() ? 'sim' : 'nao'; ?></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
 </body>
 </html>
