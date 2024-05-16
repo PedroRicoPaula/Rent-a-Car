@@ -33,11 +33,15 @@ use FamilyRentCar\BackEnd\App\DBModel;
     <!-- Enviar para o Login para sair do Dashboard -->
     <button class="btn-Reservations" name="clickReservations"><a href="index.php">Admin Page</a></button>
     <button class="button-nav"><a href="../Login.php">Login</a></button>
+    <button class="button-nav"><a href="../registerUser.php">Registar User</a></button>
     <button class="btn-Frotas" name="clickFrota"><a href="modifyFrotas.php">Frotas</a></button>
     <button class="btn-Reservations" name="clickReservations"><a href="modifyReservas.php">Reservas</a></button>
 
 <?php 
         $users = User::search([]);
+
+        /* colocar um if se carregar no botao manda-me para 
+        um form e ao clicar volta para esta página */
         ?>
         <table class="table">
                     <thead>
@@ -45,6 +49,8 @@ use FamilyRentCar\BackEnd\App\DBModel;
                             <th>ID</th>
                             <th>Email</th>
                             <th>is_Admin</th>
+                            <th>Modificar</th>
+                            <th>Apagar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,6 +59,10 @@ use FamilyRentCar\BackEnd\App\DBModel;
                             <td><?php echo $user->getId(); ?></td>
                             <td><?php echo $user->getEmail(); ?></td>
                             <td><?php echo $user->isAdmin() ? 'sim' : 'nao'; ?></td>
+                            <!-- Configurações -->
+                            <td><a href="formModifyUsers.php?id=<?php echo $user->getId(); ?>">➕</a></td>
+                            <td><a href="deleteUsers.php?id=<?php echo $user->getId(); ?>">🗑️</a></td>
+                            
                         </tr>
                         <?php } ?>
                     </tbody>

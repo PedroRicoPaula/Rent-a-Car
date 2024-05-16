@@ -30,11 +30,12 @@ session_start();
                 class="input-form"
               />
               <input
-                type="text"
+                type="time"
                 name="hora"
                 id="hora"
                 placeholder="Hora de levantamento"
                 class="input-form"
+                min="09:00" max="18:00" required
               />
               <br />
               <label for="">Devolução</label>
@@ -47,11 +48,12 @@ session_start();
                 class="input-form"
               />
               <input
-                type="text"
+                type="time"
                 name="hora"
                 id="hora"
                 placeholder="Hora de Devolução"
                 class="input-form"
+                min="09:00" max="18:00" required
               />
               <button type="submit" class="submit">Pesquisar 🔍</button>
             </form>

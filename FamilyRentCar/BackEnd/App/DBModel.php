@@ -179,4 +179,32 @@ trait DBModel
                 return $singular.'es';
         }
     }
+    
+    function snakeToCamel($string, $capitalizeFirstCharacter = true)
+    {
+
+        $str = str_replace(' ', '', ucwords(str_replace('_', ' ', $string)));
+
+        if (!$capitalizeFirstCharacter) {
+            $str[0] = strtolower($str[0]);
+        }
+    
+        return $str;
+    }
+
+
+    public function loadRelation(string $relationName, string $tableName = '')
+    {
+        $className = 'UAC\\PWII\\ORM\\' . $this->snakeToCamel($relationName);
+        echo "vou carregar a classe " . $className . ' com coluna ' . $relationName . '_id';
+        
+        $this->{$relationName} = $className::find($this->{$relationName . '_id'}, $tableName);
+        
+    }
+
+    public function rawSQL(string $sql)
+    {
+        $connection = MyConnect::getInstance();
+        return $connection->query($sql);
+    }
 }

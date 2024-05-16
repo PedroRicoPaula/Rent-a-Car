@@ -3,11 +3,15 @@ namespace FamilyRentCar\BackEnd\App;
 
 class Island
 {
-    protected string $nome;
+    use DBModel;
+
+    protected string $islandsname;
     protected string $code;
 
-    public function __construct(string $nome, string $code)
+    public function __construct(string $nome= '', string $code= '')
     {
+        $this->tableName = 'islands';
+        
         $this->nome = $nome;
         $this->code = $code;
     }
