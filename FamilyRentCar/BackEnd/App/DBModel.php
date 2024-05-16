@@ -207,4 +207,28 @@ trait DBModel
         $connection = MyConnect::getInstance();
         return $connection->query($sql);
     }
+
+    public function uploadImage()
+    {
+        /* 
+        Colocar :
+        enctype="multipart/form-data" 
+        no form.
+        */
+        $file = $_FILES['image']['tmp_name'];
+
+        if (!isset($file)){
+            echo "Please select a profile pic";
+        } else {
+            $image = addslashes(file_get_content($_FILES['image']['tmp_name']));
+            $image_name = addslashes($FILES['image']['name']);
+            $image_size = getimagesize($_FILES['image']['tmp_name']);
+
+        if ($image_size==FALSE){
+            echo "That isn't a image.";
+        } else {
+            $insert = mysql_query("INSERT INTO content VALUES ('','','','','','','','','','$image_name','$image',)");
+        }
+        }
+    }
 }

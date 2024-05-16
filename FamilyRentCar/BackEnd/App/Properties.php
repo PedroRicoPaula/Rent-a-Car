@@ -5,30 +5,30 @@ class Properties
 {
     use DBModel;
 
-    protected string $name;
+    protected string $propretiesname;
 
-    public function __construct(string $name = '')
+    public function __construct(string $propretiesname = '')
     {
-        $this->name = $name;
+        $this->propretiesname = $propretiesname;
     }
     
 
     /**
-     * Get the value of name
+     * Get the value of propretiesname
      */ 
-    public function getName()
+    public function getpropretiesname()
     {
-        return $this->name;
+        return $this->propretiesname;
     }
 
     /**
-     * Set the value of name
+     * Set the value of propretiesname
      *
      * @return  self
      */ 
-    public function setName($name)
+    public function setpropretiesname($propretiesname)
     {
-        $this->name = $name;
+        $this->propretiesname = $propretiesname;
 
         return $this;
     }

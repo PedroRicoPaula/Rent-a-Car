@@ -3,6 +3,8 @@ namespace FamilyRentCar\BackEnd\App;
 
 class Category
 {
+    use DBModel;
+    
     protected Vehicle $vehicle;
     protected string $name;
     protected string $price;
