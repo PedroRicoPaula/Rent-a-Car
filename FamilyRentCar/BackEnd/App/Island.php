@@ -8,20 +8,20 @@ class Island
     protected string $islandsname;
     protected string $code;
 
-    public function __construct(string $nome= '', string $code= '')
+    public function __construct(string $islandsname= '', string $code= '')
     {
         $this->tableName = 'islands';
         
-        $this->nome = $nome;
+        $this->islandsname = $islandsname;
         $this->code = $code;
     }
 
     /**
-     * Get the value of nome
+     * Get the value of islandsname
      */ 
-    public function getNome()
+    public function getIslandsName()
     {
-        return $this->nome;
+        return $this->islandsname;
     }
 
     /**
@@ -33,13 +33,13 @@ class Island
     }
 
     /**
-     * Set the value of nome
+     * Set the value of islandsname
      *
      * @return  self
      */ 
-    public function setNome($nome)
+    public function setIslandsName($islandsname)
     {
-        $this->nome = $nome;
+        $this->islandsname = $islandsname;
 
         return $this;
     }

@@ -3,12 +3,16 @@ namespace FamilyRentCar\BackEnd\App;
 
 class Location
 {
-    protected string $name;
+    use DBModel;
+
+    protected string $locationname;
     protected string $code;
 
-    public function __construct($name, $code)
+    public function __construct(string $locationname= '', $code= '')
     {
-        $this->name = $name;
+        $this->tableName = 'locations';
+        
+        $this->locationname = $locationname;
         $this->code = $code;
     }
 
