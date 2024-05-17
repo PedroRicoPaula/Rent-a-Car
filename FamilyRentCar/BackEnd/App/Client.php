@@ -1,6 +1,6 @@
 <?php
-namespace FamilyRentCar\BackEnd\App;
 
+namespace FamilyRentCar\BackEnd\App;
 
 class Client
 {
@@ -12,7 +12,7 @@ class Client
 
     public function __construct(string $email= '', string $name= '', string $cellphone= '')
     {
-        $this->tableName = 'clientes';
+        $this->tableName = 'clients';
         
         $this->email = $email;
         $this->name = $name;

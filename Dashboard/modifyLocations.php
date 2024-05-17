@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ('../autoload.php');
-use FamilyRentCar\BackEnd\App\User;
+use FamilyRentCar\BackEnd\App\Location;
 use FamilyRentCar\BackEnd\App\DBModel;
 
 ?>
@@ -39,7 +39,7 @@ use FamilyRentCar\BackEnd\App\DBModel;
     <button class="btn-Reservations" name="clickReservations"><a href="modifyReservas.php">Reservas</a></button>
 
 <?php 
-        $users = User::search([]);
+        $locations = Location::search([]);
 
         /* colocar um if se carregar no botao manda-me para 
         um form e ao clicar volta para esta página */
@@ -48,21 +48,17 @@ use FamilyRentCar\BackEnd\App\DBModel;
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Email</th>
-                    <th>is_Admin</th>
-                    <th>Modificar</th>
+                    <th>Nome da Ilha</th>
                     <th>Apagar</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($users as $user) {?>
+                <?php foreach ($locations as $location) {?>
                 <tr>
-                    <td><?php echo $user->getId(); ?></td>
-                    <td><?php echo $user->getEmail(); ?></td>
-                    <td><?php echo $user->isAdmin() ? 'sim' : 'nao'; ?></td>
+                    <td><?php echo $location->getId(); ?></td>
+                    <td><?php echo $location->getLocationname(); ?></td>
                     <!-- Configurações -->
-                    <td><a href="formCreateUser.php?id=<?php echo $user->getId(); ?>">➕</a></td>
-                    <td><a href="deleteUsers.php?id=<?php echo $user->getId(); ?>">🗑️</a></td>
+                    <td><a href="deleteLocation.php?id=<?php echo $location->getId(); ?>">🗑️</a></td>
                     
                 </tr>
                 <?php } ?>

@@ -175,6 +175,14 @@ trait DBModel
                 return $singular.'s';
             case 'r':
                 return $singular.'s';
+            case 'd':
+                return $singular.'s';
+            case 'n':
+                return $singular.'s';
+            case 't':
+                return $singular.'s';
+            case 'y':
+                return substr($singular,0,-1).'ies';
             default:
                 return $singular.'es';
         }

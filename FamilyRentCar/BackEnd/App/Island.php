@@ -6,14 +6,12 @@ class Island
     use DBModel;
 
     protected string $islandsname;
-    protected string $code;
 
-    public function __construct(string $islandsname= '', string $code= '')
+    public function __construct(string $islandsname= '')
     {
         $this->tableName = 'islands';
         
         $this->islandsname = $islandsname;
-        $this->code = $code;
     }
 
     /**
@@ -22,14 +20,6 @@ class Island
     public function getIslandsName()
     {
         return $this->islandsname;
-    }
-
-    /**
-     * Get the value of code
-     */ 
-    public function getCode()
-    {
-        return $this->code;
     }
 
     /**

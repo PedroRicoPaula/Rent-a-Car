@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ('../autoload.php');
-use FamilyRentCar\BackEnd\App\User;
+use FamilyRentCar\BackEnd\App\Client;
 use FamilyRentCar\BackEnd\App\DBModel;
 
 ?>
@@ -39,7 +39,7 @@ use FamilyRentCar\BackEnd\App\DBModel;
     <button class="btn-Reservations" name="clickReservations"><a href="modifyReservas.php">Reservas</a></button>
 
 <?php 
-        $users = User::search([]);
+        $clients = Client::search([]);
 
         /* colocar um if se carregar no botao manda-me para 
         um form e ao clicar volta para esta página */
@@ -49,20 +49,22 @@ use FamilyRentCar\BackEnd\App\DBModel;
                 <tr>
                     <th>ID</th>
                     <th>Email</th>
-                    <th>is_Admin</th>
+                    <th>name</th>
+                    <th>Cellphone</th>
                     <th>Modificar</th>
                     <th>Apagar</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($users as $user) {?>
+                <?php foreach ($clients as $client) {?>
                 <tr>
-                    <td><?php echo $user->getId(); ?></td>
-                    <td><?php echo $user->getEmail(); ?></td>
-                    <td><?php echo $user->isAdmin() ? 'sim' : 'nao'; ?></td>
+                    <td><?php echo $client->getId(); ?></td>
+                    <td><?php echo $client->getEmail(); ?></td>
+                    <td><?php echo $client->getName(); ?></td>
+                    <td><?php echo $client->getCellphone(); ?></td>
                     <!-- Configurações -->
-                    <td><a href="formCreateUser.php?id=<?php echo $user->getId(); ?>">➕</a></td>
-                    <td><a href="deleteUsers.php?id=<?php echo $user->getId(); ?>">🗑️</a></td>
+                    <td><a href="formCreateClients.php?id=<?php echo $client->getId(); ?>">➕</a></td>
+                    <td><a href="deleteClients.php?id=<?php echo $client->getId(); ?>">🗑️</a></td>
                     
                 </tr>
                 <?php } ?>

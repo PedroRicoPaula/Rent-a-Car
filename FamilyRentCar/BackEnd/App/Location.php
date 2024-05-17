@@ -6,52 +6,30 @@ class Location
     use DBModel;
 
     protected string $locationname;
-    protected string $code;
 
-    public function __construct(string $locationname= '', $code= '')
+    public function __construct(string $locationname= '')
     {
         $this->tableName = 'locations';
         
         $this->locationname = $locationname;
-        $this->code = $code;
     }
 
     /**
-     * Get the value of name
+     * Get the value of locationname
      */ 
-    public function getName()
+    public function getLocationname()
     {
-        return $this->name;
+        return $this->locationname;
     }
 
     /**
-     * Set the value of name
+     * Set the value of locationname
      *
      * @return  self
      */ 
-    public function setName($name)
+    public function setLocationname($locationname)
     {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of code
-     */ 
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-    /**
-     * Set the value of code
-     *
-     * @return  self
-     */ 
-    public function setCode($code)
-    {
-        $this->code = $code;
+        $this->locationname = $locationname;
 
         return $this;
     }
