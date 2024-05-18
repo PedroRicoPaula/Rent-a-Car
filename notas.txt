@@ -29,18 +29,19 @@ IDEIAS TIRADAS DE UM WEBSITE:
 BASE DE DADOS
 
 TABELAS: 
-    islands
-    locations
-    addresses
+    islands ✔
+    locations ✔
+    addresses (quase -> ✔)
 
-    clientes
-    users 
-    profiles
+    clientes ✔
+    users ✔
     
     reservations
+    
     vehicles
     categories
     properties
+
     vehicles_has_properties
     categories_has_properties
 

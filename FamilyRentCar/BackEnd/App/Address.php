@@ -1,8 +1,8 @@
 <?php
 namespace FamilyRentCar\BackEnd\App;
-require_once 'Location.php';
+/* require_once 'Location.php';
 require_once 'Island.php';
-require_once 'Client.php';
+require_once 'Client.php'; */
 
 
 class Address
@@ -12,20 +12,17 @@ class Address
     protected string $street;
     protected string $postal_code;
     protected string $door;
-    protected Island $island;
+    /* protected Island $island;
     protected Location $localidade;
-    protected Client $client;
+    protected Client $client; */
 
-    public function __construct(string $street= '', string $postal_code= '', string $door, $island= '', $location= '', $client= '')
+    public function __construct(string $street= '', string $postal_code= '', string $door= '')
     {
         $this->tableName = 'addresses';
 
         $this->street = $street;
         $this->postal_code = $postal_code;
         $this->door = $door;
-        $this->island = $island;
-        $this->location = $location;
-        $this->client = $client;
     }
 
     /**
