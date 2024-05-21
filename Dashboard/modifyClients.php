@@ -41,8 +41,6 @@ use FamilyRentCar\BackEnd\App\DBModel;
 <?php 
         $clients = Client::search([]);
 
-        /* colocar um if se carregar no botao manda-me para 
-        um form e ao clicar volta para esta página */
         ?>
         <table class="table">
             <thead>
@@ -51,6 +49,9 @@ use FamilyRentCar\BackEnd\App\DBModel;
                     <th>Email</th>
                     <th>name</th>
                     <th>Cellphone</th>
+                    <th>Street</th>
+                    <th>Postal_Code</th>
+                    <th>Door</th>
                     <th>Modificar</th>
                     <th>Apagar</th>
                 </tr>
@@ -62,6 +63,9 @@ use FamilyRentCar\BackEnd\App\DBModel;
                     <td><?php echo $client->getEmail(); ?></td>
                     <td><?php echo $client->getName(); ?></td>
                     <td><?php echo $client->getCellphone(); ?></td>
+                    <td><?php echo $client->getStreet(); ?></td>
+                    <td><?php echo $client->getPostal_code(); ?></td>
+                    <td><?php echo $client->getDoor(); ?></td>
                     <!-- Configurações -->
                     <td><a href="formCreateClients.php?id=<?php echo $client->getId(); ?>">➕</a></td>
                     <td><a href="deleteClients.php?id=<?php echo $client->getId(); ?>">🗑️</a></td>

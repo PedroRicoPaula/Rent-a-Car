@@ -1,11 +1,10 @@
 <?php
 include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\Address;
-use FamilyRentCar\BackEnd\App\Island;
 use FamilyRentCar\BackEnd\App\Location;
 use FamilyRentCar\BackEnd\App\DBModel;
 
-if (!empty($_POST['street']) && !empty($_POST['postal_code']) && !empty($_POST['door'])) {
+if (!empty($_POST['street']) && !empty($_POST['postal_code1']) && !empty($_POST['postal_code2']) && !empty($_POST['door']) && (!empty($_POST['location']))) {
     $address_exists = Address::search([
         [
             'column' => 'street',
@@ -13,40 +12,22 @@ if (!empty($_POST['street']) && !empty($_POST['postal_code']) && !empty($_POST['
             'value' => $_POST['street']
         ]
     ]);
-if(!empty($_POST['islands']) && !empty($_POST['locations'])){
-    $island_exists = Island::search([
-        [
-            'column' => 'islandsname',
-            'operator' => '=',
-            'value' => $_POST['islands']
-        ]
-        ]);
-    $location_exists = Location::search([
-        [
-            'column' => 'locationname',
-            'operator' => '=',
-            'value' => $_POST['locations']
-        ]
-    ]);
-    /* Falta o cliente, adiciona o id do cliente apartir do email dele */
-}
 
-if (!empty($address_exists)) {
-    echo "Já existe um utilizador com esse email.";
-    exit;
-}
+    if (!empty($address_exists)) {
+        echo "Já existe um endereço com esse nome.";
+        exit;
+    }
+        $postal_code = $_POST['postal_code1'] . "-" . $_POST['postal_code2'];
 
-    $new_address = new Address();
-    $new_address->setStreet($_POST['street']);
-    $new_address->setPostal_code($_POST['postal_code']);
-    $new_address->setDoor($_POST['door']);
+        $new_address = new Address($_POST['street'], $postal_code, $_POST['door'], Location::find($_POST['location']));
 
-try {
-    $new_address->save();
-    header('Location: modifyAddress.php');
-} catch (\Exception $e) {
-    echo "Houve um erro ao criar o Endereço.";
-}
+    try {
+        $new_address->save();
+        header('Location: modifyAddress.php');
+    } catch (\Exception $e) {
+        echo "Houve um erro ao criar o Endereço.". $e->getMessage();
+        print_r($e->getTrace());
+    }
        
 } else {
     echo "Todos os campos são obrigatórios.<br>";

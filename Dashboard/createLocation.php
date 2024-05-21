@@ -11,30 +11,23 @@ if (!empty($_POST['locationname']) && (!empty($_POST['island']))) {
             'operator' => '=',
             'value' => $_POST['locationname']
         ]
-        ]);
-    $island_exists = Island::find([
-        [
-            'column' => 'id',
-            'operator' => '=',
-            'value' => $_POST['island']
-        ]
     ]);
 
-if (!empty($location_exists)) {
-    echo "Já existe uma localidade com esse nome.";
-    exit;
-}
 
-    $new_location = new Location();
-    $new_location->setLocationname($_POST['locationname']);
-    $new_location->getId($_POST['island']);
+    if (!empty($location_exists)) {
+        echo "Já existe uma localidade com esse nome.";
+        exit;
+    }
+
+    $new_location = new Location($_POST['locationname'], Island::find(($_POST['island'])));
     
-try {
-    $new_location->save();
-    header('Location: index.php');
-} catch (\Exception $e) {
-    echo "Houve um erro ao criar uma Localização.";
-}
+    try {
+        $new_location->save();
+        header('Location: index.php');
+    } catch (\Exception $e) {
+        echo "Houve um erro ao criar uma Localização. " . $e->getMessage();
+        print_r($e->getTrace());
+    }
        
 } else {
     echo "Todos os campos são obrigatórios.";

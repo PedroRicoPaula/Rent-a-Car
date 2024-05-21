@@ -2,6 +2,7 @@
 session_start();
 include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\Address;
+use FamilyRentCar\BackEnd\App\Location;
 use FamilyRentCar\BackEnd\App\DBModel;
 
 ?>
@@ -41,8 +42,6 @@ use FamilyRentCar\BackEnd\App\DBModel;
 <?php 
         $addresses = Address::search([]);
 
-        /* colocar um if se carregar no botao manda-me para 
-        um form e ao clicar volta para esta página */
         ?>
         <table class="table">
             <thead>
@@ -51,6 +50,7 @@ use FamilyRentCar\BackEnd\App\DBModel;
                     <th>Street</th>
                     <th>Postal_Code</th>
                     <th>Door</th>
+                    <th>Localidade</th>
                     <th>Modificar</th>
                     <th>Apagar</th>
                 </tr>
@@ -62,6 +62,7 @@ use FamilyRentCar\BackEnd\App\DBModel;
                     <td><?php echo $address->getStreet(); ?></td>
                     <td><?php echo $address->getPostal_code(); ?></td>
                     <td><?php echo $address->getDoor(); ?></td>
+                    <td><?php echo $address->getLocation_id(); ?></td>
                     <!-- Configurações -->
                     <td><a href="formCreateAddress.php?id=<?php echo $address->getId(); ?>">➕</a></td>
                     <td><a href="deleteAddress.php?id=<?php echo $address->getId(); ?>">🗑️</a></td>

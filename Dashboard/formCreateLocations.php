@@ -17,11 +17,11 @@ use FamilyRentCar\BackEnd\App\Island;
         <label for="locationname">Nome da Localização</label>
         <input type="text" name="locationname" id="locationname" class="btn-input-locationname">
         <label for="islands">Seleciona a Ilha: </label>
-        <select name="islands" id="islands">
+        <select name="island" id="island">
             <?php 
             $islands = Island::search([]);
             foreach ($islands as $island) {?>
-            <option value="island" name="island" id="island"><?php echo $island->getIslandsName(); ?></option>
+            <option value="<?php echo $island->getId(); ?>" name="island" id="island"><?php echo $island->getIslandsName(); ?></option>
             <?php } ?>
         </select>
         <input type="submit" value="Criar Localização" class="btn-login">

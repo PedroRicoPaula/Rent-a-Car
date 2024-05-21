@@ -1,9 +1,5 @@
 <?php
 namespace FamilyRentCar\BackEnd\App;
-/* require_once 'Location.php';
-require_once 'Island.php';
-require_once 'Client.php'; */
-
 
 class Address
 {
@@ -12,17 +8,20 @@ class Address
     protected string $street;
     protected string $postal_code;
     protected string $door;
-    /* protected Island $island;
-    protected Location $localidade;
-    protected Client $client; */
+    protected ?Location $location = null;
+    protected ?int $location_id = null;
 
-    public function __construct(string $street= '', string $postal_code= '', string $door= '')
+    public function __construct(string $street= '', string $postal_code= '', string $door= '', ?Location $location = null)
     {
         $this->tableName = 'addresses';
 
         $this->street = $street;
         $this->postal_code = $postal_code;
         $this->door = $door;
+        $this->location = $location;
+        if(!empty($this->location)){
+            $this->location_id = $this->location->getId();
+        }
     }
 
     /**
@@ -83,5 +82,33 @@ class Address
         $this->door = $door;
 
         return $this;
+    }
+
+    /**
+     * Get the value of location
+     */ 
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * Set the value of location
+     *
+     * @return  self
+     */ 
+    public function setLocation($location)
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of location_id
+     */ 
+    public function getLocation_id()
+    {
+        return $this->location_id;
     }
 }

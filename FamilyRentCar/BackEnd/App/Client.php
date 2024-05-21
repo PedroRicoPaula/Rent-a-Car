@@ -9,14 +9,20 @@ class Client
     protected string $email;
     protected string $name;
     protected string $cellphone;
+    protected string $street;
+    protected string $postal_code;
+    protected string $door;
 
-    public function __construct(string $email= '', string $name= '', string $cellphone= '')
+    public function __construct(string $email= '', string $name= '', string $cellphone= '', string $street= '', string $postal_code= '', string $door= '')
     {
         $this->tableName = 'clients';
         
         $this->email = $email;
         $this->name = $name;
         $this->cellphone = $cellphone;
+        $this->street = $street;
+        $this->postal_code = $postal_code;
+        $this->door = $door;
     }
 
 
@@ -76,6 +82,66 @@ class Client
     public function setCellphone($cellphone)
     {
         $this->cellphone = $cellphone;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of street
+     */ 
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    /**
+     * Set the value of street
+     *
+     * @return  self
+     */ 
+    public function setStreet($street)
+    {
+        $this->street = $street;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of postal_code
+     */ 
+    public function getPostal_code()
+    {
+        return $this->postal_code;
+    }
+
+    /**
+     * Set the value of postal_code
+     *
+     * @return  self
+     */ 
+    public function setPostal_code($postal_code)
+    {
+        $this->postal_code = $postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of door
+     */ 
+    public function getDoor()
+    {
+        return $this->door;
+    }
+
+    /**
+     * Set the value of door
+     *
+     * @return  self
+     */ 
+    public function setDoor($door)
+    {
+        $this->door = $door;
 
         return $this;
     }

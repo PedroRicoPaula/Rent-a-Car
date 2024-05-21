@@ -41,10 +41,7 @@ use FamilyRentCar\BackEnd\App\DBModel;
 
 <?php 
         $locations = Location::search([]);
-        $islands = Island::search([]);
 
-        /* colocar um if se carregar no botao manda-me para 
-        um form e ao clicar volta para esta página */
         ?>
         <table class="table">
             <thead>
@@ -56,11 +53,13 @@ use FamilyRentCar\BackEnd\App\DBModel;
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($locations as $location) {?>
+                <?php foreach ($locations as $location) {
+                    /* $location->loadRelation('island'); */
+                    ?>
                 <tr>
                     <td><?php echo $location->getId(); ?></td>
                     <td><?php echo $location->getLocationname(); ?></td>
-                    <td><?php echo $islands->getIslandsName(); ?></td>
+                    <td><?php echo $location->getIsland_id(); ?></td>
                     <!-- Configurações -->
                     <td><a href="deleteLocation.php?id=<?php echo $location->getId(); ?>">🗑️</a></td>
                     

@@ -6,14 +6,18 @@ class Location
     use DBModel;
 
     protected string $locationname;
-    protected Island $islandsname;
+    protected ?Island $island = null;
+    protected ?int $island_id = null;
 
-    public function __construct(int $islandsname, string $locationname= '')
+    public function __construct(string $locationname= '', ?Island $island = null)
     {
         $this->tableName = 'locations';
         
         $this->locationname = $locationname;
-        $this->islandsname = $islandsname;
+        $this->island = $island;
+        if(!empty($this->island)){
+            $this->island_id = $this->island->getId();
+        }
     }
 
     /**
@@ -34,5 +38,33 @@ class Location
         $this->locationname = $locationname;
 
         return $this;
+    }
+
+    /**
+     * Set the value of island
+     *
+     * @return  self
+     */ 
+    public function setIsland($island)
+    {
+        $this->island = $island;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of island
+     */ 
+    public function getIsland()
+    {
+        return $this->island;
+    }
+
+    /**
+     * Get the value of island_id
+     */ 
+    public function getIsland_id()
+    {
+        return $this->island_id;
     }
 }

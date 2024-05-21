@@ -1,12 +1,10 @@
 <?php
 include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\Address;
-use FamilyRentCar\BackEnd\App\Island;
 use FamilyRentCar\BackEnd\App\Location;
 use FamilyRentCar\BackEnd\App\DBModel;
 
-$islands = Island::search([]);
-$locations = Location::search([]);
+
 
 ?>
 <!DOCTYPE html>
@@ -23,22 +21,18 @@ $locations = Location::search([]);
         <label for="street">Street</label>
         <input type="text" name="street" id="street" class="btn-input-login">
         <label for="postal_code">Postal_Code</label>
-        <input type="text" name="postal_code" id="postal_code" class="btn-input-login">
+        <input type="text" name="postal_code1" id="postal_code" class="btn-input-login" maxlength="4">
+        <input type="text" name="postal_code2" id="postal_code" class="btn-input-login" maxlength="3">
         <label for="door">Door</label>
         <input type="text" name="door" id="door" class="btn-input-login">
         <!-- chaves estrangeiras -->
-        <label for="islands">Escolhe uma Ilha:</label>
-        <select name="islands" id="islands">
-            <option value=""></option>
-            <?php foreach ($islands as $island) {?>
-            <option value="islands"><?php echo $island->getIslandsName(); ?></option>
-            <?php } ?>
-        </select>
         <label for="location">Escolhe uma Localidade:</label>
-        <select name="locations" id="locations">
+        <select name="location" id="location">
             <option value=""> </option>
-            <?php foreach ($locations as $location) {?>
-            <option value="locations"><?php echo $location->getLocationname(); ?></option>
+            <?php     
+                $locations = Location::search([]);
+                    foreach ($locations as $location) {?>
+            <option value="<?php echo $location->getId(); ?>" name="location" id="location"><?php echo $location->getLocationname(); ?></option>
             <?php } ?>
         </select>
         <input type="submit" value="Criar Address" class="btn-login">

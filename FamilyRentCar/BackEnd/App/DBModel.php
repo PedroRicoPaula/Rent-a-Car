@@ -24,10 +24,18 @@ trait DBModel
         unset($properties['id']);
         $properties = array_keys($properties);
 
+
+        foreach ($properties as $pos => $p) {
+            if (is_object($this->{$p})) {
+                unset($properties[$pos]);
+            }
+        }
+        $properties = array_values($properties);
+
         if (empty($this->id)) {
             $sql = "insert into " . $this->tableName . " (".implode(",", $properties).") values(";
             foreach ($properties as $pos => $property) {
-                
+
                 $sql .= "'" . $this->{$property} . "'";
 
                 if ($pos == (count($properties) - 1)) {
