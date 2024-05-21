@@ -5,23 +5,17 @@ class Category
 {
     use DBModel;
     
-    protected Vehicle $vehicle;
     protected string $name;
-    protected string $price;
     protected array $fuel_type;
-    protected string $type;
-    protected Properties $properties;
+    protected string $engine_type;
 
-    public function __construct(string $name= '', string $price= '', array $fuel_type, string $type='', $vehicle= '', $properties= '')
+    public function __construct(string $name= '', array $fuel_type, string $type='')
     {
         $this->tableName = 'categories';
 
         $this->name = $name;
-        $this->price = $price;
         $this->fuel_type = $fuel_type;
         $this->type = $type;
-        $this->vehicle = $vehicle;
-        $this->properties = $properties;
     }
 
     /**

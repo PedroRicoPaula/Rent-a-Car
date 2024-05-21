@@ -6,12 +6,14 @@ class Location
     use DBModel;
 
     protected string $locationname;
+    protected Island $islandsname;
 
-    public function __construct(string $locationname= '')
+    public function __construct(int $islandsname, string $locationname= '')
     {
         $this->tableName = 'locations';
         
         $this->locationname = $locationname;
+        $this->islandsname = $islandsname;
     }
 
     /**

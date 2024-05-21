@@ -34,7 +34,6 @@ use FamilyRentCar\BackEnd\App\DBModel;
     <button class="btn-Locations" name="clickLocations"><a href="modifyLocations.php">Modificar Localizações</a></button>
     <button class="btn-Clients" name="clickClients"><a href="modifyClients.php">Modificar Clientes</a></button>
     <button class="btn-Clients" name="clickClients"><a href="modifyAddress.php">Modificar Addresses</a></button>
-    <button class="btn-Properties" name="clickProperties"><a href="modifyProperties.php">Modificar Properties</a></button>
     <button class="btn-Categories" name="clickCategories"><a href="modifyCategories.php">Modificar Categories</a></button>
     <button class="btn-Vehicles" name="clickVehicles"><a href="modifyVehicles.php">Modificar Vehicles</a></button>
     <br>
@@ -43,7 +42,6 @@ use FamilyRentCar\BackEnd\App\DBModel;
     <button class="btn-Locations" name="clickLocations"><a href="formCreateLocations.php">Criar Locations</a></button>
     <button class="btn-Clients" name="clickClients"><a href="formCreateClients.php">Criar Clientes</a></button>
     <button class="btn-Address" name="clickAddress"><a href="formCreateAddress.php">Criar Address</a></button>
-    <button class="btn-Properties" name="clickProperties"><a href="formCreateProperties.php">Criar Properties</a></button>
     <button class="btn-Categories" name="clickCategories"><a href="formCreateCategories.php">Criar Categories</a></button>
     <button class="btn-Vehicles" name="clickVehicles"><a href="formCreateVehicles.php">Criar Vehicles</a></button>
       

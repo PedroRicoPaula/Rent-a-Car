@@ -13,33 +13,27 @@ use FamilyRentCar\db_rentcar;
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+<header class="header">
     <?php include('Includes/header.php')?>
-    <h1>Rent-a-Car</h1>
-    <h1>Escolha um Veículo</h1>
-    <div class="container1">
-        <p>1</p>
-        <p>Escolha o Veículo</p>
-        <p>2</p>
-        <p>Detalhes da Reserva</p>
-        <p>3</p>
-        <p>Boa viagem</p>
-    </div>
-    <form action="" method="post">
-        <label for="">Levantamento</label>
-        <option value="<?php echo "opcao1"; ?>"> <?php echo "opcao1";?></option>
-        <label for="">Devolução</label>
-        <option value="<?php echo "opcao1"; ?>"> <?php echo "opcao1";?></option>
-        <br>
-        <input type="date" name="date" id="data" placeholder="Data de levantamento">
-        <input type="text" name="hora" id="hora" placeholder="Hora de levantamento">
-        <br>
-        <input type="date" name="date" id="data" placeholder="Data de Devolução">
-        <input type="text" name="hora" id="hora" placeholder="Hora de Devolução">
-        <br>
-        <button type="submit">Pesquisar 🔍</button>
-    </form>
-    <!-- Aparece os veículos disponíveis -->
-    <button>Check-Out</button>
+    </header>
+
+    <main>
+      <div class="titulo-frota">
+        <h1>Frota</h1>
+      </div>
+      <div class="frota">
+        <div class="img">
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+          <img src="Images/BMW.webp" alt="" />
+        </div>
+      </div>
+    </main>
 
     <!-- Depois do Check-Out irá aparecer uma janela para entrar como cliente senão vai para um form de user -->
     <!-- Aparece a janela por cima para preencher os dados e finalizar reserva -->

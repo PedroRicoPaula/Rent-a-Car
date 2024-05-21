@@ -75,7 +75,6 @@ session_start();
           <img src="Images/BMW.webp" alt="" />
           <img src="Images/BMW.webp" alt="" />
           <img src="Images/BMW.webp" alt="" />
-          <img src="Images/BMW.webp" alt="" />
         </div>
       </div>
     </main>

@@ -2,6 +2,7 @@
 session_start();
 include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\Location;
+use FamilyRentCar\BackEnd\App\Island;
 use FamilyRentCar\BackEnd\App\DBModel;
 
 ?>
@@ -40,6 +41,7 @@ use FamilyRentCar\BackEnd\App\DBModel;
 
 <?php 
         $locations = Location::search([]);
+        $islands = Island::search([]);
 
         /* colocar um if se carregar no botao manda-me para 
         um form e ao clicar volta para esta página */
@@ -48,7 +50,8 @@ use FamilyRentCar\BackEnd\App\DBModel;
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nome da Ilha</th>
+                    <th>Nome da Localidade</th>
+                    <th>Ilha</th>
                     <th>Apagar</th>
                 </tr>
             </thead>
@@ -57,6 +60,7 @@ use FamilyRentCar\BackEnd\App\DBModel;
                 <tr>
                     <td><?php echo $location->getId(); ?></td>
                     <td><?php echo $location->getLocationname(); ?></td>
+                    <td><?php echo $islands->getIslandsName(); ?></td>
                     <!-- Configurações -->
                     <td><a href="deleteLocation.php?id=<?php echo $location->getId(); ?>">🗑️</a></td>
                     

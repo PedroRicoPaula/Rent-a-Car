@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 header {
   width: 100vw;
   height: 100vh;
@@ -22,6 +23,7 @@ header .navbar {
   position: fixed;
   letter-spacing: 0.2rem;
 }
+
 .logo {
   width: 70px;
   height: 70px;
@@ -30,6 +32,7 @@ header .navbar {
   background-position: center;
   margin: 0 auto;
 }
+
 ul {
   display: flex;
   gap: 2rem;
@@ -38,10 +41,15 @@ ul {
   font-size: 1.5rem;
   margin: 0 auto;
 }
-.navbar ul li {
+.navbar ul li a {
   transition: 0.5s ease-in-out;
+  text-decoration: none;
+  color: black;
 }
+
 .button-nav {
+  text-decoration: none;
+  color: black;
   margin: 0 auto;
   border-style: none;
   font-size: 1rem;
@@ -55,6 +63,7 @@ ul {
 }
 .button-header {
   margin: 0 auto;
+  text-decoration: none;
 }
 
 article {
@@ -130,6 +139,83 @@ img {
   margin: 1%;
 }
 
+/* FOOTER */
+footer {
+  width: 100vw;
+  min-height: 20vh;
+  background-color: rgb(205, 205, 205);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5%;
+}
+
+.ul-footer {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  font-size: 90%;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 1.5rem;
+}
+
+.icons-footer {
+  display: flex;
+}
+
+/* Contactos */
+.contactos {
+  padding-top: 10rem;
+}
+.grid-x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  background-color: rgba(255, 255, 255, 0.477);
+  margin: 3rem;
+  padding: 1rem;
+}
+
+/* Inpute contactos - style */
+.mensagem-contactos input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  background-color: #ccc;
+  border: none;
+  box-sizing: border-box;
+}
+.mensagem-contactos label {
+  color: black;
+}
+
+/* Botão enviar - contactos*/
+.btn-contactos {
+  background-color: white;
+  color: black;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 3rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  font-weight: bold;
+  opacity: 100%;
+  margin-top: 1rem;
+}
+
 /* Efeitos */
 .submit:hover {
   border: 2px solid white;
@@ -143,7 +229,7 @@ img {
   width: 5.5rem;
   color: white;
 }
-.navbar ul li:hover {
+.navbar ul li a:hover {
   color: white;
   background: linear-gradient(currentColor 0 0) bottom left / 100% 1px no-repeat;
   animation: load 1s linear infinite;

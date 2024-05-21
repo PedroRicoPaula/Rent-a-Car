@@ -9,24 +9,23 @@ class Vehicle
     protected string $plate;
     protected string $color;
     protected string $fuel;
-    protected int $num_bags;
+    protected int $numbags;
     protected int $seats;
-    protected Properties $properties;
     protected Category $category;
-    protected string $image;
+    /* protected string $image; */
     
-    public function __construct(string $brand= '', string $plate= '', string $color= '', string $fuel= '', int $num_bags, int $seats, string $image= '', $properties= '', $category= '')
+    public function __construct(string $brand= '', string $plate= '', string $color= '', string $fuel= '', int $numbags, int $seats, $category= '')
     {
         $this->tablename = 'vehicles';
+        
         $this->brand = $brand;
         $this->plate = $plate;
         $this->color = $color;
         $this->fuel = $fuel;
-        $this->num_bags = $num_bags;
+        $this->numbags = $numbags;
         $this->seats = $seats;
-        $this->properties = $properties;
         $this->category = $category;
-        $this->image = $image;
+        /* $this->image = $image; */
     }
 
 
@@ -153,20 +152,20 @@ class Vehicle
     /**
      * Get the value of image
      */ 
-    public function getImage()
+    /* public function getImage()
     {
         return $this->image;
-    }
+    } */
 
     /**
      * Set the value of image
      *
      * @return  self
      */ 
-    public function setImage($image)
+    /* public function setImage($image)
     {
         $this->image = $image;
 
         return $this;
-    }
+    } */
 }

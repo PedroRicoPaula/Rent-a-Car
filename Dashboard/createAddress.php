@@ -1,6 +1,8 @@
 <?php
 include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\Address;
+use FamilyRentCar\BackEnd\App\Island;
+use FamilyRentCar\BackEnd\App\Location;
 use FamilyRentCar\BackEnd\App\DBModel;
 
 if (!empty($_POST['street']) && !empty($_POST['postal_code']) && !empty($_POST['door'])) {
@@ -11,6 +13,23 @@ if (!empty($_POST['street']) && !empty($_POST['postal_code']) && !empty($_POST['
             'value' => $_POST['street']
         ]
     ]);
+if(!empty($_POST['islands']) && !empty($_POST['locations'])){
+    $island_exists = Island::search([
+        [
+            'column' => 'islandsname',
+            'operator' => '=',
+            'value' => $_POST['islands']
+        ]
+        ]);
+    $location_exists = Location::search([
+        [
+            'column' => 'locationname',
+            'operator' => '=',
+            'value' => $_POST['locations']
+        ]
+    ]);
+    /* Falta o cliente, adiciona o id do cliente apartir do email dele */
+}
 
 if (!empty($address_exists)) {
     echo "Já existe um utilizador com esse email.";

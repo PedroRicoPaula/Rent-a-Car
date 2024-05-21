@@ -3,7 +3,7 @@ include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\User;
 use FamilyRentCar\BackEnd\App\DBModel;
 
-if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_verify'])&& !empty($_POST['is_admin'])) {
+if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_verify'])) {
     $user_exists = User::search([
         [
             'column' => 'email',
@@ -14,7 +14,6 @@ if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['pass
 
 if (!empty($user_exists)) {
     echo "Já existe um utilizador com esse email.";
-    exit;
 }
 
     $new_user = new User();
