@@ -45,7 +45,7 @@ use FamilyRentCar\BackEnd\App\DBModel;
     <button class="btn-Address" name="clickAddress"><a href="formCreateAddress.php">Criar Address</a></button>
     <button class="btn-Categories" name="clickCategories"><a href="formCreateCategories.php">Criar Categories</a></button>
     <button class="btn-Vehicles" name="clickVehicles"><a href="formCreateVehicles.php">Criar Vehicles</a></button>
-    <button class="btn-Reservas" name="clickReservas"><a href="formCreateReservas.php">Criar Reservas</a></button>
+    <button class="btn-Reservas" name="clickReservas"><a href="formCreateReservations.php">Criar Reservas</a></button>
       
 </body>
 </html>

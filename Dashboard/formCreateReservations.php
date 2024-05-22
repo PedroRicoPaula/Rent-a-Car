@@ -12,7 +12,8 @@ use FamilyRentCar\BackEnd\App\Location;
 <body>
     <h1>Criar Reservas</h1>
     <div class="login-page">
-        <!-- Levantamento -->
+        <form action="createReservations.php" method="post">
+                <!-- Levantamento -->
         <label for="">Levantamento</label>
         <select name="levantamento" id="levantamento">
                 <?php 
