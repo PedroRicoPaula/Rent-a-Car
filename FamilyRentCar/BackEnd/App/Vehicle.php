@@ -11,12 +11,13 @@ class Vehicle
     protected string $fuel;
     protected int $numbags;
     protected int $seats;
-    protected Category $category;
     /* protected string $image; */
+    protected ?Category $category = null;
+    protected ?int $categories_id = null;
     
-    public function __construct(string $brand= '', string $plate= '', string $color= '', string $fuel= '', int $numbags, int $seats, $category= '')
+    public function __construct(string $brand= '', string $plate= '', string $color= '', string $fuel= '', int $numbags= 0, int $seats= 0 /* , string $image= '' */, ?Category $category = null)
     {
-        $this->tablename = 'vehicles';
+        $this->tableName = 'vehicles';
         
         $this->brand = $brand;
         $this->plate = $plate;
@@ -24,10 +25,12 @@ class Vehicle
         $this->fuel = $fuel;
         $this->numbags = $numbags;
         $this->seats = $seats;
-        $this->category = $category;
         /* $this->image = $image; */
+        $this->category = $category;
+        if(!empty($this->category)){
+            $this->categories_id = $this->category->getId();
+        }
     }
-
 
     /**
      * Get the value of brand

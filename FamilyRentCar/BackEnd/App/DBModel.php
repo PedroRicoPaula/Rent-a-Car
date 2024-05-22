@@ -36,7 +36,8 @@ trait DBModel
             $sql = "insert into " . $this->tableName . " (".implode(",", $properties).") values(";
             foreach ($properties as $pos => $property) {
 
-                $sql .= "'" . $this->{$property} . "'";
+                /* $sql .= "'" . $this->{$property} . "'"; */
+                $sql .= isset($this->{$property}) ?  "'{$this->{$property}}'" : "NULL";
 
                 if ($pos == (count($properties) - 1)) {
                     $sql .= ");";
@@ -224,27 +225,37 @@ trait DBModel
         return $connection->query($sql);
     }
 
-    public function uploadImage()
+    public function uploadImage($path)
     {
-        /* 
-        Colocar :
-        enctype="multipart/form-data" 
-        no form.
-        */
-        $file = $_FILES['image']['tmp_name'];
+        if(!empty($_FILES['image']['name'])){
+            $nomeImagem = $_FILES['image']['name'];
+            $tipo = $_FILES['image']['type'];
+            $nomeTemporario = $_FILES['image']['tmp_name'];
+            $tamanho = $_FILES['image']['size'];
+            $erros = [];
+            $tamanhoMaximo = 1024 * 1024 * 5; //5MB
 
-        if (!isset($file)){
-            echo "Please select a profile pic";
-        } else {
-            $image = addslashes(file_get_content($_FILES['image']['tmp_name']));
-            $image_name = addslashes($FILES['image']['name']);
-            $image_size = getimagesize($_FILES['image']['tmp_name']);
+            if($tamanho > $tamanhoMaximo){
+                $erros = "Ficheiro demasiado Grande";
+            }
+            $arquivosPermitidos = ['png', 'jpg', 'jpeg'];
+            $extensao = pathinfo($nomeImagem, PATHINFO_EXTENSION);
 
-        if ($image_size==FALSE){
-            echo "That isn't a image.";
-        } else {
-            $insert = mysql_query("INSERT INTO content VALUES ('','','','','','','','','','$image_name','$image',)");
-        }
+            if(!in_array($extensao, $arquivosPermitidos)){
+                $erros = "Ficheiro não permitido";
+            }
+
+            $tiposPermitidos = ['Images/png','Images/jpg'.'Images/jpeg'];
+            if(!in_array($tipo, $tiposPermitidos)){
+                $erros = "Tipo de Ficheiro não permitido";
+            }
+
+            if(!empty($erros)){
+                foreach($erros as $erro){
+                    echo $erro;
+                }
+            }
         }
     }
+
 }

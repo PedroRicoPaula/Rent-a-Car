@@ -5,55 +5,35 @@ class Category
 {
     use DBModel;
     
-    protected string $name;
-    protected array $fuel_type;
-    protected string $engine_type;
+    protected string $categoryname;
+    protected string $fuel_type;
+    protected string $type;
 
-    public function __construct(string $name= '', array $fuel_type, string $type='')
+    public function __construct(string $categoryname= '', string $fuel_type='', string $type='')
     {
         $this->tableName = 'categories';
 
-        $this->name = $name;
+        $this->categoryname = $categoryname;
         $this->fuel_type = $fuel_type;
         $this->type = $type;
     }
 
     /**
-     * Get the value of name
+     * Get the value of categoryname
      */ 
-    public function getName()
+    public function getcategoryName()
     {
-        return $this->name;
+        return $this->categoryname;
     }
 
     /**
-     * Set the value of name
+     * Set the value of categoryname
      *
      * @return  self
      */ 
-    public function setName($name)
+    public function setcategoryName($categoryname)
     {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of price
-     */ 
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * Set the value of price
-     *
-     * @return  self
-     */ 
-    public function setPrice($price)
-    {
-        $this->price = $price;
+        $this->categoryname = $categoryname;
 
         return $this;
     }
