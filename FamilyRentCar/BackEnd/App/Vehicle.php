@@ -113,21 +113,21 @@ class Vehicle
     }
 
     /**
-     * Get the value of num_bags
+     * Get the value of numbags
      */ 
-    public function getNum_bags()
+    public function getNumbags()
     {
-        return $this->num_bags;
+        return $this->numbags;
     }
 
     /**
-     * Set the value of num_bags
+     * Set the value of numbags
      *
      * @return  self
      */ 
-    public function setNum_bags($num_bags)
+    public function setNumbags($numbags)
     {
-        $this->num_bags = $num_bags;
+        $this->numbags = $numbags;
 
         return $this;
     }
@@ -171,4 +171,34 @@ class Vehicle
 
         return $this;
     } */
+
+    
+
+    /**
+     * Get the value of categories_id
+     */ 
+    public function getCategories_id()
+    {
+        return $this->categories_id;
+    }
+
+    /**
+     * Get the value of category
+     */ 
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set the value of category
+     *
+     * @return  self
+     */ 
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
 }
