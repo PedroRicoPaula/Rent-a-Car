@@ -5,29 +5,29 @@ class Reservation
 {
     use DBModel;
 
-    protected string $date_Collection;
-    protected string $date_Delivery;
-    protected string $hour_Collection;
-    protected string $hour_Delivery;
-    /* Chaves Estrangeiras -> 4*/
+    protected string $date_collection;
+    protected string $date_delivery;
+    protected string $hour_collection;
+    protected string $hour_delivery;
+    /* Chaves Estrangeiras -> 4 */
     protected ?Client $client = null;
     protected ?int $client_id = null;
-    protected ?Vehicle $vehicle = null;
-    protected ?int $vehicle_id = null;
+    protected ?Category $category = null;
+    protected ?int $category_id = null;
     protected ?Location $locationCollection = null;
     protected ?int $locationCollection_id = null;
     protected ?Location $locationDelivery = null;
     protected ?int $locationDelivery_id = null;
 
-    public function __construct(string $date_Collection, string $date_Delivery, string $hour_Collection, string $hour_Delivery, 
-    ?Client $client = null, ?Location $locationCollection = null, ?Vehicle $vehicle = null, ?Location $locationDelivery = null)
+    public function __construct(string $date_collection= '', string $date_delivery= '', string $hour_collection= '', string $hour_delivery= '', 
+    ?Client $client = null, ?Location $locationCollection = null, ?Category $category = null, ?Location $locationDelivery = null)
     {
         $this->tableName = 'reservations';
 
-        $this->date_Collection = $date_Collection;
-        $this->date_Delivery = $date_Delivery;
-        $this->hour_Collection = $hour_Collection;
-        $this->hour_Delivery = $hour_Delivery;
+        $this->date_collection = $date_collection;
+        $this->date_delivery = $date_delivery;
+        $this->hour_collection = $hour_collection;
+        $this->hour_delivery = $hour_delivery;
 
         $this->client = $client;
         if(!empty($this->client)){
@@ -37,9 +37,9 @@ class Reservation
         if(!empty($this->locationCollection)){
             $this->locationCollection_id = $this->locationCollection->getId();
         }
-        $this->vehicle = $vehicle;
-        if(!empty($this->vehicle)){
-            $this->vehicle_id = $this->vehicle->getId();
+        $this->category = $category;
+        if(!empty($this->category)){
+            $this->category_id = $this->category->getId();
         }
         $this->locationDelivery = $locationDelivery;
         if(!empty($this->locationDelivery)){
@@ -48,8 +48,7 @@ class Reservation
 
         /* Dúvidas:
 A chave estrangeira da localização -> tenho que criar duas strings vazias e atribuir a cada uma delas o getlocationname?
-As datas e as horas posso deixar como string e depois fazer a verificação se não números em vez de usar Carbon?
-
+Para usar Carbon nas datas e horas, tinha que passar o tipo de dados para string.
         */
     }
 
@@ -57,81 +56,81 @@ As datas e as horas posso deixar como string e depois fazer a verificação se n
     
 
     /**
-     * Get the value of date_Collection
+     * Get the value of date_collection
      */ 
-    public function getDate_Collection()
+    public function getdate_collection()
     {
-        return $this->date_Collection;
+        return $this->date_collection;
     }
 
     /**
-     * Set the value of date_Collection
+     * Set the value of date_collection
      *
      * @return  self
      */ 
-    public function setDate_Collection($date_Collection)
+    public function setdate_collection($date_collection)
     {
-        $this->date_Collection = $date_Collection;
+        $this->date_collection = $date_collection;
 
         return $this;
     }
 
     /**
-     * Get the value of date_Delivery
+     * Get the value of date_delivery
      */ 
-    public function getDate_Delivery()
+    public function getdate_delivery()
     {
-        return $this->date_Delivery;
+        return $this->date_delivery;
     }
 
     /**
-     * Set the value of date_Delivery
+     * Set the value of date_delivery
      *
      * @return  self
      */ 
-    public function setDate_Delivery($date_Delivery)
+    public function setdate_delivery($date_delivery)
     {
-        $this->date_Delivery = $date_Delivery;
+        $this->date_delivery = $date_delivery;
 
         return $this;
     }
 
     /**
-     * Get the value of hour_Collection
+     * Get the value of hour_collection
      */ 
-    public function getHour_Collection()
+    public function gethour_collection()
     {
-        return $this->hour_Collection;
+        return $this->hour_collection;
     }
 
     /**
-     * Set the value of hour_Collection
+     * Set the value of hour_collection
      *
      * @return  self
      */ 
-    public function setHour_Collection($hour_Collection)
+    public function sethour_collection($hour_collection)
     {
-        $this->hour_Collection = $hour_Collection;
+        $this->hour_collection = $hour_collection;
 
         return $this;
     }
 
     /**
-     * Get the value of hour_Delivery
+     * Get the value of hour_delivery
      */ 
-    public function getHour_Delivery()
+    public function gethour_delivery()
     {
-        return $this->hour_Delivery;
+        return $this->hour_delivery;
     }
 
     /**
-     * Set the value of hour_Delivery
+     * Set the value of hour_delivery
      *
      * @return  self
      */ 
-    public function setHour_Delivery($hour_Delivery)
+    public function sethour_delivery($hour_delivery)
     {
-        $this->hour_Delivery = $hour_Delivery;
+        $this->hour_delivery = $hour_delivery;
 
         return $this;
     }
@@ -162,34 +161,6 @@ As datas e as horas posso deixar como string e depois fazer a verificação se n
     public function getClient_id()
     {
         return $this->client_id;
-    }
-
-    /**
-     * Get the value of vehicle
-     */ 
-    public function getVehicle()
-    {
-        return $this->vehicle;
-    }
-
-    /**
-     * Set the value of vehicle
-     *
-     * @return  self
-     */ 
-    public function setVehicle($vehicle)
-    {
-        $this->vehicle = $vehicle;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of vehicle_id
-     */ 
-    public function getVehicle_id()
-    {
-        return $this->vehicle_id;
     }
 
     /**
