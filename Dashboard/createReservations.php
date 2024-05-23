@@ -36,8 +36,7 @@ if(!empty($_POST['date_collection']) && (!empty($_POST['date_delivery'])) && !em
             Client::find($_POST['client']), 
             Location::find($_POST['locationCollection']), 
             Category::find(($_POST['category'])),
-            Location::find($_POST['locationDelivery']), 
-            
+            Location::find($_POST['locationDelivery']),
         );
 
     try {
