@@ -27,7 +27,7 @@ if (!empty($_POST['brand']) && (!empty($_POST['plate'])) && !empty($_POST['color
     
     try {
         $new_vehicle->save();
-        header('Location: index.php');
+        header('Location: modifyVehicles.php');
     } catch (\Exception $e) {
         echo "Houve um erro ao criar uma Localização. " . $e->getMessage();
         print_r($e->getTrace());
@@ -35,6 +35,7 @@ if (!empty($_POST['brand']) && (!empty($_POST['plate'])) && !empty($_POST['color
        
 } else {
     echo "Todos os campos são obrigatórios.";
+    echo '<button><a href="formCreateVehicles.php">Criar Veiculos</a></button>';
 }
 
 ?>

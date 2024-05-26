@@ -22,13 +22,15 @@ if (!empty($island_exists)) {
 
 try {
     $new_island->save();
-    header('Location: index.php');
+    header('Location: modifyIslands.php');
 } catch (\Exception $e) {
-    echo "Houve um erro ao criar o utilizador.";
+    echo "Houve um erro ao criar o utilizador.". $e->getMessage();
+    print_r($e->getTrace());
 }
        
 } else {
     echo "Todos os campos são obrigatórios.";
+    echo '<button><a href="formCreateIslands.php">Criar Ilhas</a></button>';
 }
 
 ?>

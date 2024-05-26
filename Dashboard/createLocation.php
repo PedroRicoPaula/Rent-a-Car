@@ -23,7 +23,7 @@ if (!empty($_POST['locationname']) && (!empty($_POST['island']))) {
     
     try {
         $new_location->save();
-        header('Location: index.php');
+        header('Location: modifyLocations.php');
     } catch (\Exception $e) {
         echo "Houve um erro ao criar uma Localização. " . $e->getMessage();
         print_r($e->getTrace());
@@ -31,6 +31,7 @@ if (!empty($_POST['locationname']) && (!empty($_POST['island']))) {
        
 } else {
     echo "Todos os campos são obrigatórios.";
+    echo '<button><a href="formCreateLocations.php">Criar Localizações</a></button>';
 }
 
 ?>

@@ -27,6 +27,8 @@ use FamilyRentCar\BackEnd\App\DBModel;
     <!-- Enviar para o Login para sair do Dashboard -->
     <h3>Configurar na Base de Dados</h3>
     <button class="button-nav"><a href="../Login.php">Login</a></button>
+    <button class="button-nav"><a href="../Logout.php">Logout</a></button>
+    <br>
     <button class="btn-User" name="clickUser"><a href="modifyUsers.php">Modificar Utilizadores</a></button>
     <button class="btn-Islands" name="clickIslands"><a href="modifyIslands.php">Modificar Ilhas</a></button>
     <button class="btn-Locations" name="clickLocations"><a href="modifyLocations.php">Modificar Localizações</a></button>
@@ -34,7 +36,7 @@ use FamilyRentCar\BackEnd\App\DBModel;
     <button class="btn-Clients" name="clickClients"><a href="modifyAddress.php">Modificar Addresses</a></button>
     <button class="btn-Categories" name="clickCategories"><a href="modifyCategories.php">Modificar Categories</a></button>
     <button class="btn-Vehicles" name="clickVehicles"><a href="modifyVehicles.php">Modificar Vehicles</a></button>
-    <button class="btn-Reservations" name="clickReservations"><a href="modifyReservas.php">Modificar Reservas</a></button>
+    <button class="btn-Reservations" name="clickReservations"><a href="modifyReservation.php">Modificar Reservas</a></button>
     <br>
     <hr>
     <br>

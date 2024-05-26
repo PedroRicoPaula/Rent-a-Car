@@ -31,6 +31,7 @@ if (!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['cellphon
        
 } else {
     echo "Todos os campos são obrigatórios.";
+    echo '<button><a href="formCreateClients.php">Criar Clientes</a></button>';
 }
 
 ?>

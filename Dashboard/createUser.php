@@ -25,11 +25,13 @@ try {
     $new_user->save();
     header('Location: modifyUsers.php');
 } catch (\Exception $e) {
-    echo "Houve um erro ao criar o utilizador.";
+    echo "Houve um erro ao criar o utilizador.". $e->getMessage();
+    print_r($e->getTrace());
 }
        
 } else {
     echo "Todos os campos são obrigatórios.";
+    echo '<button><a href="formCreateUsers.php">Criar Categorias</a></button>';
 }
 
 ?>

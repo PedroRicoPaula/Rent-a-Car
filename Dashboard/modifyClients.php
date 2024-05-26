@@ -35,8 +35,7 @@ use FamilyRentCar\BackEnd\App\DBModel;
     <br>
     <button class="button-nav"><a href="../Login.php">Login</a></button>
     <button class="button-nav"><a href="formCreateUser.php">Criar User</a></button>
-    <button class="btn-Frotas" name="clickFrota"><a href="modifyFrotas.php">Frotas</a></button>
-    <button class="btn-Reservations" name="clickReservations"><a href="modifyReservas.php">Reservas</a></button>
+    <button class="btn-Reservations" name="clickReservations"><a href="modifyReservation.php">Reservas</a></button>
 
 <?php 
         $clients = Client::search([]);
