@@ -1,5 +1,7 @@
 <?php 
+include ('autoload.php');
 use FamilyRentCar\BackEnd\App\User;
+use FamilyRentCar\BackEnd\App\Category;
 session_start();
 
 //var_dump($_SESSION);
@@ -19,7 +21,7 @@ session_start();
       <article>
         <div class="container">
           <div class="form">
-            <form action="verifyReservations.php" method="post">
+            <form action="createClient.php" method="post">
               <label for="">Levantamento</label>
               <option value=""></option>
               <input
@@ -67,14 +69,17 @@ session_start();
       </div>
       <div class="frota">
         <div class="img">
-          <img src="Images/BMW.webp" alt="" />
-          <img src="Images/BMW.webp" alt="" />
-          <img src="Images/BMW.webp" alt="" />
-          <img src="Images/BMW.webp" alt="" />
-          <img src="Images/BMW.webp" alt="" />
-          <img src="Images/BMW.webp" alt="" />
-          <img src="Images/BMW.webp" alt="" />
-          <img src="Images/BMW.webp" alt="" />
+          <?php 
+          $categories = Category::search([]);
+          foreach($categories as $category){
+          ?>
+          <div class="blocoCategoria">
+          <img class="img-card" src="Images/<?php echo $category->getId()?>.jpg" alt="category Image">
+          <p class="tiposCategorias">Tipo de Categoria: <?php echo $category->getcategoryName(); ?></p>
+          <p class="tiposCategorias"> ⛽ <?php echo $category->getFuel_type(); ?></p>
+          <p class="tiposCategorias">Cilindrada: <?php echo $category->getType(); ?></p>
+          </div>
+          <?php }?>
         </div>
       </div>
     </main>

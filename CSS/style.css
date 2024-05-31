@@ -124,6 +124,28 @@ main {
   justify-content: center;
   letter-spacing: 0.5rem;
 }
+.tituloFrota {
+  display: flex;
+  justify-content: center;
+  padding-top: 20%;
+  flex-direction: column;
+  align-items: center;
+}
+.tituloFrota h1 {
+  font-size: 4rem;
+  justify-content: center;
+  letter-spacing: 0.5rem;
+  color: black;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.573);
+  border-radius: 20px;
+}
+.tituloFrota p {
+  font-size: 4rem;
+  justify-content: center;
+  margin: 0;
+  transition: 0.5s ease-in-out;
+}
 main .frota {
   display: flex;
   justify-content: center;
@@ -131,12 +153,22 @@ main .frota {
 .img {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 img {
   width: 20rem;
   height: 12rem;
+  margin: 0;
+}
+
+.blocoCategoria {
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
   margin: 1%;
+}
+.img-card {
+  border-radius: 50px;
 }
 
 /* FOOTER */
@@ -216,6 +248,40 @@ select {
   margin-top: 1rem;
 }
 
+/* Historia Institucional */
+.tituloInstitucional {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding-top: 11%;
+  font-size: 3rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.historia {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+  padding: 2%;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.689);
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+/* Minhas Reservas */
+.table {
+  justify-content: center;
+  margin: 0;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.689);
+  border: 1px solid black;
+}
+
 /* Efeitos */
 .submit:hover {
   border: 2px solid white;
@@ -233,5 +299,9 @@ select {
   color: white;
   background: linear-gradient(currentColor 0 0) bottom left / 100% 1px no-repeat;
   animation: load 1s linear infinite;
+  cursor: pointer;
+}
+.tituloFrota p:hover {
+  font-size: 5rem;
   cursor: pointer;
 }
