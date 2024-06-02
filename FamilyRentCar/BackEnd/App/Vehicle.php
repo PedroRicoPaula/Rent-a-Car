@@ -27,6 +27,7 @@ class Vehicle
         $this->seats = $seats;
         /* $this->image = $image; */
         $this->category = $category;
+        /* Verifica se não está vazio na BD */
         if(!empty($this->category)){
             $this->categories_id = $this->category->getId();
         }

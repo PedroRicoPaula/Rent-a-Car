@@ -3,6 +3,7 @@ include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\Client;
 use FamilyRentCar\BackEnd\App\DBModel;
 
+// Recebe os valores do Form(POST) e verifica se não está vazio os dados inseridos
 if (!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['cellphone']) && 
 !empty($_POST['street']) && !empty($_POST['postal_code1']) && !empty($_POST['postal_code2']) && !empty($_POST['door'])) {
     $client_exists = Client::search([
@@ -22,6 +23,7 @@ if (!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['cellphon
         $_POST['street'], $postal_code, $_POST['door']);
 
     try {
+        // Cria na BD através do DBModel
         $new_client->save();
         header('Location: modifyClients.php');
     } catch (\Exception $e) {

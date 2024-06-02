@@ -3,6 +3,7 @@ include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\Island;
 use FamilyRentCar\BackEnd\App\DBModel;
 
+// Recebe o valor do Form(POST) e verifica se não está vazio o dado inserido
 if (!empty($_POST['islandsname'])) {
     $island_exists = Island::search([
         [
@@ -21,6 +22,7 @@ if (!empty($island_exists)) {
     $new_island->setIslandsName($_POST['islandsname']);
 
 try {
+    // Cria na BD através do DBModel
     $new_island->save();
     header('Location: modifyIslands.php');
 } catch (\Exception $e) {

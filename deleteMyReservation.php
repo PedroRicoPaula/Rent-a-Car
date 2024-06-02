@@ -3,7 +3,7 @@ include ('autoload.php');
 use FamilyRentCar\BackEnd\App\Reservation;
 
 print_r($_GET);
-
+//Apaga a  reserva selecionada
 try{
 $reservation = Reservation::find($_GET['id']);
 /* var_dump($reservation); */

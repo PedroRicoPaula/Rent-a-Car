@@ -52,7 +52,8 @@ use FamilyRentCar\BackEnd\App\DBModel;
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($locations as $location) {
+                <?php //Foreach para procurar e mostrar as Localizações que existem na BD 
+                 foreach ($locations as $location) {
                     /* $location->loadRelation('island'); */
                     ?>
                 <tr>

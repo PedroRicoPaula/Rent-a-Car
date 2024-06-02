@@ -19,6 +19,7 @@ class Address
         $this->postal_code = $postal_code;
         $this->door = $door;
         $this->location = $location;
+        /* Verifica se não está vazio na BD */
         if(!empty($this->location)){
             $this->location_id = $this->location->getId();
         }

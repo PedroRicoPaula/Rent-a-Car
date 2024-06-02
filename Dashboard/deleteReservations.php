@@ -3,7 +3,7 @@ include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\Reservation;
 
 print_r($_GET);
-
+// Elimina da BD o dado criado no Form
 try{
 $reservation = Reservation::find($_GET['id']);
 /* var_dump($reservation); */

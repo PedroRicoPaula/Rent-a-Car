@@ -29,6 +29,7 @@ use FamilyRentCar\BackEnd\App\Island;
         <label for="islands">Seleciona a Ilha: </label>
         <select name="island" id="island">
             <?php 
+            //Foreach para procurar as Ilhas que existem na BD
             $islands = Island::search([]);
             foreach ($islands as $island) {?>
             <option value="<?php echo $island->getId(); ?>" name="island" id="island"><?php echo $island->getIslandsName(); ?></option>

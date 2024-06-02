@@ -50,7 +50,8 @@ use FamilyRentCar\BackEnd\App\User;
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($reservations as $reservation) {
+                <?php //Foreach para procurar e mostrar as Reservas que existem na BD  
+                foreach ($reservations as $reservation) {
                     ?>
                 <tr>
                     <td><?php echo $reservation->getId(); ?></td>

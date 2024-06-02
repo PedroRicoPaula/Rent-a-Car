@@ -4,6 +4,7 @@ use FamilyRentCar\BackEnd\App\Vehicle;
 use FamilyRentCar\BackEnd\App\Category;
 use FamilyRentCar\BackEnd\App\DBModel;
 
+// Recebe os valores do Form(POST) e verifica se não está vazio os dados inseridos
 if (!empty($_POST['brand']) && (!empty($_POST['plate'])) && !empty($_POST['color']) && !empty($_POST['fuel']) &&
 (!empty($_POST['numbags']))&& !empty($_POST['sits']) /* && !empty($_POST['file']) */ && (!empty($_POST['category']))) {
     $vehicle_exists = Vehicle::search([
@@ -26,6 +27,7 @@ if (!empty($_POST['brand']) && (!empty($_POST['plate'])) && !empty($_POST['color
     $_POST['sits']/* , $_POST['file'] */, Category::find(($_POST['category'])));
     
     try {
+        // Cria na BD através do DBModel
         $new_vehicle->save();
         header('Location: modifyVehicles.php');
     } catch (\Exception $e) {

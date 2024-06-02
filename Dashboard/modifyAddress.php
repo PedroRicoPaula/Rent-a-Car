@@ -55,7 +55,8 @@ use FamilyRentCar\BackEnd\App\DBModel;
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($addresses as $address) {?>
+                <?php //Foreach para procurar e mostrar os Endereços que existem na BD 
+                foreach ($addresses as $address) {?>
                 <tr>
                     <td><?php echo $address->getId(); ?></td>
                     <td><?php echo $address->getStreet(); ?></td>

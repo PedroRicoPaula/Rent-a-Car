@@ -3,6 +3,7 @@ include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\User;
 use FamilyRentCar\BackEnd\App\DBModel;
 
+// Recebe os valores do Form(POST) e verifica se não está vazio os dados inseridos
 if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_verify'])) {
     $user_exists = User::search([
         [
@@ -22,6 +23,7 @@ if (!empty($user_exists)) {
     $new_user->setIs_admin($_POST['is_admin']);
 
 try {
+    // Cria na BD através do DBModel
     $new_user->save();
     header('Location: modifyUsers.php');
 } catch (\Exception $e) {

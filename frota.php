@@ -31,6 +31,7 @@ session_start();
         <div class="img">
           <?php 
           $categories = Category::search([]);
+//Foreach para procurar e mostrar as Categorias que existem na BD e adiciona as imagens correspondentes ao id
           foreach($categories as $category){
           ?>
           <div class="blocoCategoria">

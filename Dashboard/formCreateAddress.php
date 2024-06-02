@@ -39,7 +39,8 @@ use FamilyRentCar\BackEnd\App\DBModel;
         <label for="location">Escolhe uma Localidade:</label>
         <select name="location" id="location">
             <option value=""> </option>
-            <?php     
+            <?php
+                //Foreach para procurar as localizações que existem na BD
                 $locations = Location::search([]);
                     foreach ($locations as $location) {?>
             <option value="<?php echo $location->getId(); ?>" name="location" id="location"><?php echo $location->getLocationname(); ?></option>

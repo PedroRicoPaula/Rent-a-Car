@@ -52,7 +52,8 @@ use FamilyRentCar\BackEnd\App\DBModel;
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($categories as $category) {?>
+                <?php //Foreach para procurar e mostrar as Categorias que existem na BD 
+                foreach ($categories as $category) {?>
                 <tr>
                     <td><?php echo $category->getId(); ?></td>
                     <td><?php echo $category->getcategoryName(); ?></td>

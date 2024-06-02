@@ -39,9 +39,6 @@ use FamilyRentCar\BackEnd\App\DBModel;
 
 <?php 
         $islands = Island::search([]);
-
-        /* colocar um if se carregar no botao manda-me para 
-        um form e ao clicar volta para esta página */
         ?>
         <table class="table">
             <thead>
@@ -52,7 +49,8 @@ use FamilyRentCar\BackEnd\App\DBModel;
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($islands as $island) {?>
+                <?php //Foreach para procurar e mostrar as Ilhas que existem na BD 
+                 foreach ($islands as $island) {?>
                 <tr>
                     <td><?php echo $island->getId(); ?></td>
                     <td><?php echo $island->getIslandsName(); ?></td>

@@ -42,6 +42,7 @@ use FamilyRentCar\BackEnd\App\Category;
         <label for="fuel">Seleciona o Combustível</label>
         <select name="fuel" id="fuel">
             <?php
+            //Foreach para procurar as Categorias que existem na BD
             $categories = Category::search([]);
             foreach ($categories as $fuel) {?>
             <option value="<?php echo $fuel->getFuel_type(); ?>" name="fuel" id="fuel"><?php echo $fuel->getFuel_type(); ?></option>
@@ -58,7 +59,7 @@ use FamilyRentCar\BackEnd\App\Category;
         <label for="categories">Seleciona a Categoria:</label>
         <select name="category" id="category">
             <?php
-            /* $categories = Category::search([]); */
+                //Foreach para procurar as localizações que existem na BD
             foreach ($categories as $category) {?>
             <option value="<?php echo $category->getId(); ?>" name="category" id="category"><?php echo $category->getcategoryName(); ?></option>
             <?php } ?>

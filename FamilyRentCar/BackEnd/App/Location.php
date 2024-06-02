@@ -15,6 +15,7 @@ class Location
         
         $this->locationname = $locationname;
         $this->island = $island;
+        /* Verifica se não está vazio na BD */
         if(!empty($this->island)){
             $this->island_id = $this->island->getId();
         }

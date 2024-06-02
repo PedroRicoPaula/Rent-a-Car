@@ -39,9 +39,6 @@ use FamilyRentCar\BackEnd\App\DBModel;
 
 <?php 
         $users = User::search([]);
-
-        /* colocar um if se carregar no botao manda-me para 
-        um form e ao clicar volta para esta página */
         ?>
         <table class="table">
             <thead>
@@ -54,7 +51,8 @@ use FamilyRentCar\BackEnd\App\DBModel;
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($users as $user) {?>
+                <?php //Foreach para procurar e mostrar os Utilizadores que existem na BD 
+                 foreach ($users as $user) {?>
                 <tr>
                     <td><?php echo $user->getId(); ?></td>
                     <td><?php echo $user->getEmail(); ?></td>

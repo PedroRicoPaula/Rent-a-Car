@@ -30,6 +30,7 @@ use FamilyRentCar\BackEnd\App\Client;
         <label for="locationCollection">Levantamento</label>
         <select name="locationCollection" id="locationCollection">
                 <?php 
+                //Foreach para procurar as localizações que existem na BD
                 $locations = Location::search([]);
                 foreach ($locations as $location) {?>
                 <option value="<?php echo $location->getId(); ?>" name="locationCollection" id="locationCollection"><?php echo $location->getLocationname(); ?></option>
@@ -44,6 +45,7 @@ use FamilyRentCar\BackEnd\App\Client;
         <label for="locationDelivery">Devolução</label>
         <select name="locationDelivery" id="locationDelivery">
                 <?php
+                //Foreach para procurar as localizações que existem na BD
                 $locations = Location::search([]);
                 foreach ($locations as $location) {?>
                 <option value="<?php echo $location->getId(); ?>" name="locationDelivery" id="locationDelivery"><?php echo $location->getLocationname(); ?></option>
@@ -57,6 +59,7 @@ use FamilyRentCar\BackEnd\App\Client;
         <label for="categories">Seleciona a Categoria:</label>
         <select name="category" id="category">
                 <?php
+                //Foreach para procurar as Categorias que existem na BD
                 $categories = Category::search([]);
                 foreach ($categories as $category) {?>
                 <option value="<?php echo $category->getId(); ?>" name="category" id="category"><?php echo $category->getcategoryName(); ?></option>
@@ -66,6 +69,7 @@ use FamilyRentCar\BackEnd\App\Client;
         <label for="clients">Seleciona o Cliente:</label>
         <select name="client" id="client">
                 <?php
+                //Foreach para procurar os Clientes que existem na BD
                 $clients = Client::search([]);
                 foreach ($clients as $client) {?>
                 <option value="<?php echo $client->getId(); ?>" name="client" id="client"><?php echo $client->getName(); ?></option>

@@ -30,6 +30,7 @@ class Reservation
         $this->hour_delivery = $hour_delivery;
 
         $this->client = $client;
+        /* Verifica se não está vazio na BD em todos os if's dentro deste __construct*/
         if(!empty($this->client)){
             $this->client_id = $this->client->getId();
         }
@@ -45,11 +46,6 @@ class Reservation
         if(!empty($this->locationDelivery)){
             $this->locationDelivery_id = $this->locationDelivery->getId();
         }
-
-        /* Dúvidas:
-A chave estrangeira da localização -> tenho que criar duas strings vazias e atribuir a cada uma delas o getlocationname?
-Para usar Carbon nas datas e horas, tinha que passar o tipo de dados para string.
-        */
     }
 
 

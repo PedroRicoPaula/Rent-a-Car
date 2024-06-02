@@ -56,7 +56,8 @@ use FamilyRentCar\BackEnd\App\DBModel;
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($clients as $client) {?>
+                <?php //Foreach para procurar e mostrar os Clientes que existem na BD 
+                 foreach ($clients as $client) {?>
                 <tr>
                     <td><?php echo $client->getId(); ?></td>
                     <td><?php echo $client->getEmail(); ?></td>

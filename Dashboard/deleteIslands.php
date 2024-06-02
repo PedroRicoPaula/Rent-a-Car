@@ -3,7 +3,7 @@ include ('../autoload.php');
 use FamilyRentCar\BackEnd\App\Island;
 
 print_r($_GET);
-
+// Elimina da BD o dado criado no Form
 try{
 $island = Island::find($_GET['id']);
 /* var_dump($island); */

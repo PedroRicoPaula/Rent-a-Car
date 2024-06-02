@@ -58,7 +58,8 @@ use FamilyRentCar\BackEnd\App\DBModel;
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($vehicles as $vehicle) {
+                <?php //Foreach para procurar e mostrar os Veículos que existem na BD 
+                foreach ($vehicles as $vehicle) {
                     /* $vehicle->loadRelation('island'); */
                     ?>
                 <tr>
