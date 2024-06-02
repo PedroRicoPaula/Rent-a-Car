@@ -1,8 +1,9 @@
 <?php
-include ('../autoload.php');
+include ('autoload.php');
 use FamilyRentCar\BackEnd\App\Location;
 use FamilyRentCar\BackEnd\App\Category;
 use FamilyRentCar\BackEnd\App\Client;
+use FamilyRentCar\BackEnd\App\User;
 
 ?>
 <!DOCTYPE html>
@@ -63,7 +64,10 @@ use FamilyRentCar\BackEnd\App\Client;
                 <?php } ?>
         </select>
         <br>
-        <label for="clients">ID de Cliente</label>
+        <label for="clients">ID de Cliente: <?php 
+        $_SESSION['user_id'] = $utilizadores->getId(); echo  $_SESSION['user_id'];
+        ?>
+        </label>
         <!-- Aqui mostro o id do cliente criado no formulário anterior -->
         <input type="submit" value="Criar Veículo" class="btn-login">
         </form>

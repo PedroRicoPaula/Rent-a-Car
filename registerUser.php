@@ -20,6 +20,8 @@
     </form>
     <div class="user-register">
         <a href="verifyLogin.php">Faz Login</a>
+        <br>
+        <a href="index.php">Voltar para a Home Page</a>
     </div>
     </div>
 </body>

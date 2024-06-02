@@ -2,6 +2,7 @@
 include ('autoload.php');
 use FamilyRentCar\BackEnd\App\User;
 use FamilyRentCar\BackEnd\App\Category;
+session_start();
 
 ?>
 
@@ -17,7 +18,7 @@ use FamilyRentCar\BackEnd\App\Category;
 <header class="header">
     <?php include('Includes/header.php')?>
     <div class="tituloFrota">
-      <h1>Desça para Visualizar as Frotas</h1>
+      <h1>Desça para Visualizar a Frota</h1>
       <p>⬇️</p>
     </div>
     </header>

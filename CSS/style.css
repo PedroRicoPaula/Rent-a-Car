@@ -282,6 +282,33 @@ select {
   border: 1px solid black;
 }
 
+/* Criar cliente */
+.formCreateClient {
+  display: grid;
+  justify-items: center;
+  width: 450px;
+  height: 620px;
+  margin: 0 auto;
+  position: relative;
+  top: 16%;
+  padding: 2%;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.689);
+  border: 1px solid black;
+  border-radius: 50px;
+}
+.formClient {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.formClient label {
+  color: black;
+}
 /* Efeitos */
 .submit:hover {
   border: 2px solid white;

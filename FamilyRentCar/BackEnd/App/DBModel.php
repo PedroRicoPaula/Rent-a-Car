@@ -225,37 +225,4 @@ trait DBModel
         return $connection->query($sql);
     }
 
-    public function uploadImage($path)
-    {
-        if(!empty($_FILES['image']['name'])){
-            $nomeImagem = $_FILES['image']['name'];
-            $tipo = $_FILES['image']['type'];
-            $nomeTemporario = $_FILES['image']['tmp_name'];
-            $tamanho = $_FILES['image']['size'];
-            $erros = [];
-            $tamanhoMaximo = 1024 * 1024 * 5; //5MB
-
-            if($tamanho > $tamanhoMaximo){
-                $erros = "Ficheiro demasiado Grande";
-            }
-            $arquivosPermitidos = ['png', 'jpg', 'jpeg'];
-            $extensao = pathinfo($nomeImagem, PATHINFO_EXTENSION);
-
-            if(!in_array($extensao, $arquivosPermitidos)){
-                $erros = "Ficheiro não permitido";
-            }
-
-            $tiposPermitidos = ['Images/png','Images/jpg'.'Images/jpeg'];
-            if(!in_array($tipo, $tiposPermitidos)){
-                $erros = "Tipo de Ficheiro não permitido";
-            }
-
-            if(!empty($erros)){
-                foreach($erros as $erro){
-                    echo $erro;
-                }
-            }
-        }
-    }
-
 }

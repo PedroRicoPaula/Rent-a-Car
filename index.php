@@ -37,7 +37,7 @@ session_start();
                 id="hora"
                 placeholder="Hora de levantamento"
                 class="input-form"
-                min="09:00" max="18:00" required
+                min="09:00" max="18:00"
               />
               <br />
               <label for="">Devolução</label>
@@ -55,7 +55,7 @@ session_start();
                 id="hora"
                 placeholder="Hora de Devolução"
                 class="input-form"
-                min="09:00" max="18:00" required
+                min="09:00" max="18:00"
               />
               <button type="submit" class="submit">Pesquisar 🔍</button>
             </form>
